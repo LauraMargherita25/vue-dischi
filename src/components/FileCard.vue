@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "../assets";
+.album_card{
+  background-color: $blue_card;
+}
 </style>
