@@ -16,9 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~bootstrap/scss/bootstrap";
 @import "./assets/styles/style.scss";
-
-#app {
-}
 </style>
 
