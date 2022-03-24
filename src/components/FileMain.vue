@@ -13,7 +13,7 @@ import FileCard from './FileCard.vue'
 
 export default {
     name: "FileMain",
-    daya(){
+    data(){
         return{
             arrAlbums: [
                 {
