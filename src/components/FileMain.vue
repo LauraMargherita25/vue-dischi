@@ -1,7 +1,7 @@
 <template>
   <main>
       <div class="container">
-        <div class="row">
+        <div class="row row row-cols-5">
             <file-card v-for="album in arrAlbums" :key="album.title"/>
         </div>
       </div>
