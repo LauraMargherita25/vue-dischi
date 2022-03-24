@@ -15,11 +15,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "./assets/styles/style.scss";
 
 #app {
-  background-color: $blue_bg;
 }
 </style>
 
