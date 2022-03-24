@@ -2,14 +2,15 @@
   <main>
       <div class="container">
         <div class="row row row-cols-5">
-            <file-card v-for="album in arrAlbums" :key="album.title"/>
+            <file-card v-for="album in arrAlbums" :key="album.title" :album-data="album"/>
         </div>
       </div>
   </main>
 </template>
 
 <script>
-import FileCard from './FileCard.vue'
+import FileCard from './FileCard.vue';
+import axios from 'axios';
 
 export default {
     name: "FileMain",
@@ -51,6 +52,12 @@ export default {
     } ,
     components: { 
         FileCard 
+    },
+    created() {
+        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+         .then((response)=> {
+             console.log(response)
+         })
     },
 }
 </script>
