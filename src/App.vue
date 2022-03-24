@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <file-main/>
-  </div>
+    <div id="app">
+      <file-main/>
+    </div>
 </template>
 
 <script>
@@ -15,6 +15,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "./assets/styles/style.scss";
 
+#app {
+  background-color: $blue_bg;
+}
 </style>
+
