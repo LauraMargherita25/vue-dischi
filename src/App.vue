@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FileMain/>
+    <file-main/>
   </div>
 </template>
 

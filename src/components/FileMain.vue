@@ -1,11 +1,16 @@
 <template>
   <main>
+      <file-card/>
   </main>
 </template>
 
 <script>
+import FileCard from './FileCard.vue'
 export default {
-    name: "FileMain"
+    name: "FileMain",
+    components: { 
+        FileCard 
+    },
 }
 </script>
 
