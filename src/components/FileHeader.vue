@@ -4,7 +4,6 @@
         <a class="navbar-brand" href="#">
             <img src="../../public/img/spotify_logo.png" alt="" class="img-fluid">
         </a>
-        <p class="text-light">{{ stringaRicerca }}</p>
         <file-serch-components @search="setSearchGenre"/>
       </div>
   </header>
@@ -15,15 +14,10 @@ import FileSerchComponents from './FileSerchComponents.vue';
 
 export default {
   name: "FileHeader",
-  data() {
-      return {
-          stringaRicerca: ""
-      }
-  },
   methods: {
       setSearchGenre(genereAlbum) {
-          this.stringaRicerca == genereAlbum,
-          console.log(genereAlbum)
+          this.$emit('search', genereAlbum);
+          console.log("sono il cl di header" + genereAlbum);
       }
   },
   components:{

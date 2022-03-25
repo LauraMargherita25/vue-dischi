@@ -2,6 +2,7 @@
   <main class="d-flex justify-content-center align-item-center">
         <div v-if="arrAlbums == null" class="text-light">Dati in caricamento</div> 
         <div v-else class="container d-flex justify-content-center align-items-center">
+            <p>{{ searchString }}</p>
             <div class="row row row-cols-5">
                 <file-card v-for="album in arrAlbums" :key="album.title" :album-data="album"/>
             </div>
@@ -20,8 +21,14 @@ export default {
             arrAlbums: null
         }
     } ,
+    props: {
+        searchString: String,
+    },
     components: { 
         FileCard 
+    },
+    methods: {
+        
     },
     created() {
         setTimeout(() => {

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-      <file-header/>
-      <file-main/>
+      <file-header @search="searchRilevato"/>
+      <file-main :search-string = "strSearch"/>
     </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
   components: {
     FileHeader,
     FileMain
+  },
+  data() {
+    return {
+      strSearch: "",
+    }
+  },
+  methods: {
+    searchRilevato(strSearch) {
+      console.log("sono il cl di app" + strSearch);
+      this.strSearch = strSearch;
+    }
   }
 }
 </script>
