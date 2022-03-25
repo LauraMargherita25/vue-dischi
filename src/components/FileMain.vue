@@ -16,38 +16,7 @@ export default {
     name: "FileMain",
     data(){
         return{
-            arrAlbums: [
-                {
-                    poster:	"https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
-                    title:	"New Jersey",
-                    genre:	"Rock",
-                    year:	"1988",
-                },
-                {
-                    poster:	"https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
-                    title:	"New Jersey",
-                    genre:	"Rock",
-                    year:	"1988",
-                },
-                {
-                    poster:	"https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
-                    title:	"New Jersey",
-                    genre:	"Rock",
-                    year:	"1988",
-                },
-                {
-                    poster:	"https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
-                    title:	"New Jersey",
-                    genre:	"Rock",
-                    year:	"1988",
-                },
-                {
-                    poster:	"https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
-                    title:	"New Jersey",
-                    genre:	"Rock",
-                    year:	"1988",
-                }
-            ]
+            arrAlbums: null
         }
     } ,
     components: { 
@@ -55,9 +24,10 @@ export default {
     },
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-         .then((response)=> {
-             console.log(response)
-         })
+        .then((response)=> {
+            console.log(response)
+            this.arrAlbums = response.data.response;
+        })
     },
 }
 </script>
