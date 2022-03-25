@@ -1,48 +1,31 @@
 <template>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light mb-5">
-      <div class="container-fluid">
+  <header class="mb-5">
+      <div class="container-fluid d-flex">
         <a class="navbar-brand" href="#">
-            <img src="" alt="">
+            <img src="../../public/img/spotify_logo.png" alt="" class="img-fluid">
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+        <file-serch-components/>
       </div>
-    </nav>
   </header>
 </template>
 
 <script>
+import FileSerchComponents from './FileSerchComponents.vue';
+
 export default {
   name: "FileHeader",
+  components:{
+      FileSerchComponents
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/styles/partials/variables.scss";
-    header{
-        background-color: $blue_header;
+header{
+    background-color: $blue_header;
+    .navbar-brand{
+        width: 80px;
     }
+}
 </style>
