@@ -18,5 +18,9 @@ export default {
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap";
 @import "./assets/styles/style.scss";
+#app{
+  width: 100%;
+  height: 100%;
+}
 </style>
 

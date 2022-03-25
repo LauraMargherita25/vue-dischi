@@ -1,10 +1,11 @@
 <template>
-  <main>
-      <div class="container">
-        <div class="row row row-cols-5">
-            <file-card v-for="album in arrAlbums" :key="album.title" :album-data="album"/>
+  <main class="d-flex justify-content-center align-item-center">
+        <div v-if="arrAlbums == null" class="text-light">Dati in caricamento</div> 
+        <div v-else class="container d-flex justify-content-center align-items-center">
+            <div class="row row row-cols-5">
+                <file-card v-for="album in arrAlbums" :key="album.title" :album-data="album"/>
+            </div>
         </div>
-      </div>
   </main>
 </template>
 
@@ -23,11 +24,13 @@ export default {
         FileCard 
     },
     created() {
-        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-        .then((response)=> {
-            console.log(response)
-            this.arrAlbums = response.data.response;
-        })
+        setTimeout(() => {
+            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+            .then((response)=> {
+                console.log(response)
+                this.arrAlbums = response.data.response;
+            })
+        }, 3000);
     },
 }
 </script>
