@@ -1,6 +1,7 @@
 <template>
-   <form class="d-flex">
-        <select 
+   <form class="d-flex" @submit.prevent="">
+       <input type="text" v-model="strSearch">
+        <!-- <select 
             title="genre_selector" 
             name="genre_selector" 
             id="genre_selector" 
@@ -13,8 +14,8 @@
             <option value="metal">metal</option>
             <option value="jazz">jazz</option>
             <option value="pop">pop</option>
-        </select>
-        <button class="btn btn-outline-success" type="submit">
+        </select> -->
+        <button @click="$emit('search', strSearch)" class="btn btn-outline-success" type="submit">
             Search
         </button>
     </form>
@@ -22,7 +23,12 @@
 
 <script>
 export default {
-    name: "FileSerchComponents"
+    name: "FileSerchComponents",
+    data() {
+        return {
+            strSearch: "",
+        }
+    }
 }
 </script>
 
