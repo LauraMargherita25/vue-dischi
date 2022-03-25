@@ -1,15 +1,18 @@
 <template>
     <div id="app">
+      <file-header/>
       <file-main/>
     </div>
 </template>
 
 <script>
+import FileHeader from './components/FileHeader.vue'
 import FileMain from './components/FileMain.vue'
 
 export default {
   name: 'App',
   components: {
+    FileHeader,
     FileMain
   }
 }
