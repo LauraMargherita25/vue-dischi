@@ -1,8 +1,8 @@
 <template>
   <main class="d-flex justify-content-center align-item-center">
         <div v-if="arrAlbums == null" class="text-light">Dati in caricamento</div> 
-        <div v-else class="container d-flex justify-content-center align-items-center">
-            <div class="row row row-cols-5">
+        <div v-else class="container d-flex align-items-start">
+            <div class="row row row-cols-5 w-100">
                 <file-card v-for="album in searchGenre" :key="album.title" :album-data="album"/>
             </div>
         </div>
@@ -44,6 +44,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+main{
+    height: 100%;
+}
 </style>
 
