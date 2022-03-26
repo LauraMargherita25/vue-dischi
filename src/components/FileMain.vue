@@ -2,9 +2,8 @@
   <main class="d-flex justify-content-center align-item-center">
         <div v-if="arrAlbums == null" class="text-light">Dati in caricamento</div> 
         <div v-else class="container d-flex justify-content-center align-items-center">
-            <p>{{ searchString }}</p>
             <div class="row row row-cols-5">
-                <file-card v-for="album in arrAlbums" :key="album.title" :album-data="album"/>
+                <file-card v-for="album in searchGenre" :key="album.title" :album-data="album"/>
             </div>
         </div>
   </main>
@@ -27,8 +26,10 @@ export default {
     components: { 
         FileCard 
     },
-    methods: {
-        
+    computed: {
+        searchGenre() {
+            return this.arrAlbums.filter((album) => album.genre.toLowerCase().includes(this.searchString.toLowerCase()))
+        }
     },
     created() {
         setTimeout(() => {

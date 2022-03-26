@@ -1,6 +1,6 @@
 <template>
   <div class="col mb-5">
-    <div class="album_card p-3 text-center">
+    <div class="album_card p-3 d-flex flex-column align-items-center text-center">
       <div class="img_wrapper mb-3">
         <img :src="albumData.poster" :alt="albumData.title" >
       </div>
@@ -23,6 +23,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/styles/partials/variables.scss";
 .album_card{
+  width: 200px;
   height: 380px;
   background-color: $blue_card;
   color: $text_color;

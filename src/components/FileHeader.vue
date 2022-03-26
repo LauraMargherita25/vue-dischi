@@ -16,8 +16,8 @@ export default {
   name: "FileHeader",
   methods: {
       setSearchGenre(genereAlbum) {
-          this.$emit('search', genereAlbum);
-          console.log("sono il cl di header" + genereAlbum);
+        this.$emit('search', genereAlbum);
+        console.log("sono il cl di header" + genereAlbum); 
       }
   },
   components:{
