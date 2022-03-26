@@ -1,7 +1,7 @@
 <template>
   <header class="mb-5">
-      <div class="container-fluid d-flex">
-        <a class="navbar-brand" href="#">
+      <div class="container-fluid d-flex p-1 align-items-center">
+        <a class="me-auto" href="#">
             <img src="../../public/img/spotify_logo.png" alt="" class="img-fluid">
         </a>
         <file-serch-components @search="setSearchGenre"/>
@@ -30,7 +30,7 @@ export default {
 @import "../assets/styles/partials/variables.scss";
 header{
     background-color: $blue_header;
-    .navbar-brand{
+    a{
         width: 80px;
     }
 }

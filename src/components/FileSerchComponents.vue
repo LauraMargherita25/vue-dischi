@@ -1,17 +1,16 @@
 <template>
    <form class="d-flex" @submit.prevent="">
-        <!-- <input type="text" v-model="strSearch">
-        <button @click="$emit('search', strSearch)" class="btn btn-outline-success" type="submit">
-            Search
-        </button> -->
         <select v-model="selected">
-            <option disabled value="">Please select one</option>
-            <option>Rock</option>
+            <option disabled value="">Please select a genre</option>
+            <!-- <option>Rock</option>
             <option>Metal</option>
             <option>Jazz</option>
-            <option>Pop</option>
+            <option>Pop</option> -->
+            <option v-for="option in arrOptions" v-bind:value="option.value" :key="option.value">
+                {{ option.text }}
+            </option>
         </select>
-        <button @click="$emit('search', selected)" class="btn btn-outline-success" type="submit">
+        <button @click="$emit('search', selected)" class="btn btn-outline-success ms-1" type="submit">
             Search
         </button>
     </form>
@@ -20,14 +19,15 @@
 <script>
 export default {
     name: "FileSerchComponents",
-    // data() {
-    //     return {
-    //         strSearch: "",
-    //     }
-    // },
     data() {
         return {
             selected: "",
+            arrOptions: [
+                { text: 'Rock', value: 'Rock' },
+                { text: 'Metal', value: 'Metal' },
+                { text: 'Jazz', value: 'Jazz' },
+                { text: 'Pop', value: 'Pop' }
+            ]
         }
     },
 }
